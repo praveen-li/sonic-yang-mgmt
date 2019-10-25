@@ -7,7 +7,6 @@ import pytest
 import os
 
 from sonic_yang_mgmt import sonic_yang_mgmt
-import sonic_yang_mgmt/tests/yang-model-tests/yangModelTesting
 
 @pytest.fixture
 def response():
@@ -21,6 +20,6 @@ def response():
 
 def test_content(response):
     """Sample pytest test function with the pytest fixture as an argument."""
-    os.cmd('python yangModelTesting.py -f yangTest.json -y ../../yang-models/')
+    os.system('python sonic_yang_mgmt/tests/yang-model-tests/yangModelTesting.py -f sonic_yang_mgmt/tests/yang-model-tests/yangTest.json -y sonic_yang_mgmt/yang-models/')
     # from bs4 import BeautifulSoup
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
